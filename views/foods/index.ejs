@@ -8,5 +8,12 @@
   <body>
       <%- include('../partials/_navbar.ejs') %> 
     <h1>Welcome to my Pantry</h1>
+    <% if(HasEmptyPantry) { %>
+      <p>There are no items in this pantry.</p>
+    <% } else { %>
+      <% pantry.forEach((pantryItem) => { %>
+          <%= pantryItem.name %>
+      <% }); %>
+    <% } %>
   </body>
 </html>

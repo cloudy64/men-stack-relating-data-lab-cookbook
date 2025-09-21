@@ -20,9 +20,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pantry:{
-    Type:[foodSchema]
-  }
+  pantry:[foodSchema],
+ 
 });
 
 const User = mongoose.model('User', userSchema);
