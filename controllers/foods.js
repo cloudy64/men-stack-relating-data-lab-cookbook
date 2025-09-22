@@ -25,13 +25,13 @@ router.get('/new',(req,res)=>{
 
 router.post('/',async(req,res)=>{
   try{
- const currentUser = await User.findById(req.session.user._id);
+    const currentUser = await User.findById(req.session.user._id);
     currentUser.pantry.push(req.body); //dealing with array so .push eveything 
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/foods`); //redirect goes to server.js it wont put in mind the /user/id the one dont change
   }catch(error){
     console.log(error);
-    res.redirect('/')
+    res.redirect('/');
   };
 })
 
