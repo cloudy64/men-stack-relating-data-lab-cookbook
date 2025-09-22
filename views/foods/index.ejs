@@ -12,9 +12,13 @@
     <% if(HasEmptyPantry) { %>
       <p>There are no items in this pantry.</p>
     <% } else { %>
+      <ul>
       <% pantry.forEach((pantryItem) => { %>
+          <li>
           <%= pantryItem.name %>
+          </li>
       <% }); %>
+      </ul>
     <% } %>
   </body>
 </html>
