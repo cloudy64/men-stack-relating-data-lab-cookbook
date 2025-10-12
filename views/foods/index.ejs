@@ -6,18 +6,20 @@
     <title>My Pantry</title>
   </head>
   <body>
-      <%- include('../partials/_navbar.ejs') %> 
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to my Pantry</h1>
     <a href="/users/<%= user._id %>/foods/new">Add new food Item</a>
     <% if(HasEmptyPantry) { %>
       <p>There are no items in this pantry.</p>
     <% } else { %>
       <ul>
+
       <% pantry.forEach((pantryItem) => { %>
           <li>
-          <%= pantryItem.name %>
+            <a href="/users/<%= user._id %>/foods/<%= pantryItem._id %>"><%= pantryItem.name %></a>
           </li>
       <% }); %>
+
       </ul>
     <% } %>
   </body>
